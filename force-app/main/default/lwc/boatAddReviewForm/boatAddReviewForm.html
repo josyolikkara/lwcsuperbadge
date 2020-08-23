@@ -1,0 +1,25 @@
+<template>
+    <lightning-record-edit-form object-api-name={boatReviewObject} onsuccess={handleSuccess} onsubmit={handleSubmit}>
+        <lightning-layout vertical-align="stretch" multiple-rows="true">
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-layout-item size="12">
+                <label class="slds-form-element__label" for="fieldid">{labelSubject}</label>
+                <lightning-input-field id="nameField" field-name={nameField} variant="label-hidden">
+                </lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <p>{labelRating}</p>
+                <c-five-star-rating rating-value={rating} onratingchange={handleRatingChanged}>
+                </c-five-star-rating>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-input-field field-name={commentField}>
+                </lightning-input-field>
+            </lightning-layout-item>
+            <div class="slds-align--absolute-center">
+                <lightning-button label="Submit" type="submit" icon-name="utility:save"></lightning-button>
+            </div>
+        </lightning-layout>
+    </lightning-record-edit-form>
+</template>
